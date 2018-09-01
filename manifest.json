@@ -1,55 +1,119 @@
 {
-	"background": {
-		"scripts": [ "js/nzbget.js", "js/utilities.js" ]
-	},
-	"description": "Interact with and send NZB-files to NZBGet",
-	"icons": {
-		"16": "img/icon16.png"
-		,"19": "img/icon19.png"
-		,"38": "img/icon38.png"
-		,"48": "img/icon48.png"
-	},
-	"manifest_version": 2,
-	"web_accessible_resources": [
-		"img/icon16.png"
-		,"img/nzbget-arrow.svg"
-	],
-	"name": "nzbget-chrome",
-	"options_ui": {
-		"page": "options.html",
-		"chrome_style": false
-	},
-	"permissions": [ "*://*/", "contextMenus", "tabs", "notifications", "storage" ],
-	"version": "1.6",
-	"browser_action": {
-		"default_icon": "img/icon38.png",
-		"default_popup": "popup.html"
-	},
-	"content_scripts": [
-		{
-			"matches": [ "*://*.feedly.com/*" ]
-			,"js": [ "sites/common.js", "sites/feedly.js" ]
-			,"css": [ "sites/common.css" ]
-		},{
-			"matches": [ "*://*.nzbclub.com/*" ]
-			,"js": [ "sites/common.js", "sites/nzbclub.js" ]
-			,"css": [ "sites/common.css" ]
-		},{
-			"matches": [ "*://*.nzbindex.nl/*", "*://*.nzbindex.com/*" ]
-			,"js": [ "sites/common.js", "sites/nzbindex.js" ]
-			,"css": [ "sites/common.css" ]
-		},{
-			"matches": [ "*://*.binsearch.info/*", "*://*.binsearch.net/*" ]
-			,"js": [ "sites/common.js", "sites/binsearch.js" ]
-			,"css": [ "sites/common.css" ]
-		},{
-			"matches": [ "*://*.dognzb.cr/*" ]
-			,"js": [ "sites/common.js", "sites/dognzb.js" ]
-			,"css": [ "sites/common.css" ]
-		},{
-			"matches": [ "*://*.newzleech.com/*" ]
-			,"js": [ "sites/common.js", "sites/newzleech.js" ]
-			,"css": [ "sites/common.css", "sites/newzleech.css" ]
-		}
-	]
+    "author": "hpsu",
+    "background": {
+        "page": "background.html",
+        "persistent": true
+    },
+    "browser_action": {
+        "default_icon": {
+            "38": "img/icon38.png",
+            "48": "img/icon48.png",
+            "128": "img/icon128.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "css": [
+                "sites/common.css"
+            ],
+            "js": [
+                "sites/common.js",
+                "sites/feedly.js"
+            ],
+            "matches": [
+                "*://*.feedly.com/*"
+            ]
+        },
+        {
+            "css": [
+                "sites/common.css"
+            ],
+            "js": [
+                "sites/common.js",
+                "sites/nzbclub.js"
+            ],
+            "matches": [
+                "*://*.nzbclub.com/*"
+            ]
+        },
+        {
+            "css": [
+                "sites/common.css"
+            ],
+            "js": [
+                "sites/common.js",
+                "sites/nzbindex.js"
+            ],
+            "matches": [
+                "*://*.nzbindex.nl/*",
+                "*://*.nzbindex.com/*"
+            ]
+        },
+        {
+            "css": [
+                "sites/common.css"
+            ],
+            "js": [
+                "sites/common.js",
+                "sites/binsearch.js"
+            ],
+            "matches": [
+                "*://*.binsearch.info/*",
+                "*://*.binsearch.net/*"
+            ]
+        },
+        {
+            "css": [
+                "sites/common.css"
+            ],
+            "js": [
+                "sites/common.js",
+                "sites/dognzb.js"
+            ],
+            "matches": [
+                "*://*.dognzb.cr/*"
+            ]
+        },
+        {
+            "css": [
+                "sites/common.css",
+                "sites/newzleech.css"
+            ],
+            "js": [
+                "sites/common.js",
+                "sites/newzleech.js"
+            ],
+            "matches": [
+                "*://*.newzleech.com/*"
+            ]
+        }
+    ],
+    "description": "Interact with and send NZB-files to NZBGet",
+    "icons": {
+        "16": "img/icon16.png",
+        "19": "img/icon19.png",
+        "38": "img/icon38.png",
+        "48": "img/icon48.png"
+    },
+    "Key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkQAVQpqnlQtgCyjqsFb/t4CGhMj1sumGEjkXMDXgdavfo1FxczPwt/JgOFTLyNU2e6USu/vweVQjr+DHmNFfuu2x13zpJ39fipQrIujJDOcfk4Y7bAeSqH0l7nayp5K/LvPRgOM9Za7OWSon6wNrUA6TaDjLQoswqkE2ia+fYLSmoVenx1uEVr7b47/mhVSg0bHgkb5pMdWMao1dbNHjvHf4a/oTQMbewEHNh3FwDipR5Ip1YfZqmogpab2+nHHEK0Uu8WcQj4BGglrRB3ld5tmN+xk3XqQ3ocT/dW2Uh8hJim4rEPY3x2F5Kz4j0VewewTmf/gcejDYG454OyMa4wIDAQAB",
+    "manifest_version": 2,
+    "name": "nzbget-chrome",
+    "options_page": "options.html",
+    "permissions": [
+        "*://*/",
+        "contextMenus",
+        "tabs",
+        "notifications",
+        "storage"
+    ],
+    "version": "1.5",
+    "web_accessible_resources": [
+        "img/icon16.png",
+        "img/nzbget-arrow.svg"
+    ],
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
+    }
 }
