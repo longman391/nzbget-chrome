@@ -68,8 +68,8 @@ Microsoft Edge extension to interact with nzbget
 * Flow control (pause, resume, delete) on individual items or whole queue.
 * One click site intergarion on newznab sites and feedly.com
 
-### Installation from chrome webstore
-https://chrome.google.com/webstore/detail/nzbget-chrome/pbhceneiekgjjeblaghpkdkaomlloghm
+### Installation from Microsoft Store
+Not yet implemented.
 
 ### Installation instructions (as unpacked extension)
 *Note: Newer versions of chrome for windows will show a yellow icon backgorund for unpacked extensions*
