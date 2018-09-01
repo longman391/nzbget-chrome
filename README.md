@@ -1,10 +1,10 @@
-<img src="img/icon48.png" align="absmiddle"> nzbget-chrome
+<img src="img/icon48.png" align="absmiddle"> nzbget-edge
 =============
 
-Google chrome extension to interact with nzbget
+Microsoft Edge extension to interact with nzbget
 
 ### Version history
-#### 1.6 - (current dev)
+#### 1.6 - (current dev, forked from nzbget-chrome)
 
 ---
 
